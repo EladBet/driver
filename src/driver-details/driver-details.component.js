@@ -13,8 +13,13 @@ class DriverDetails extends Component {
         const driver = store.app.drivers.filter(driver => driver.id === params.id)[0];
         return (
             <div className="driver-details">
-                <Link view={views.home} store={store}> Go to Home Page</Link>
-                <Driver {...driver} />
+                {store.app.error && <div className="error">Error: {store.app.error.message}</div>}
+                {store.app.loaded && !store.app.error && (
+                    <React.Fragment>
+                        <Link view={views.home} store={store}> Go to Home Page</Link>
+                        <Driver {...driver} />
+                    </React.Fragment>
+                 )}
             </div>
         )
     }

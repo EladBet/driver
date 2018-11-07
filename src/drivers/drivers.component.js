@@ -15,7 +15,7 @@ class Drivers extends Component {
                     {store.app.error && <div className="error">Error: {store.app.error.message}</div>}
                     {store.app.loaded && !store.app.error && (
                         <div className="drivers-container">
-                            {store.app.drivers.length > 0 ? store.app.drivers.map((driver, index) =>
+                            {store.app.drivers.length ? store.app.drivers.map((driver, index) =>
                                 <Driver key={index.toString()} {...driver} />
                             ) : 'No Available Drivers Found :-('}
                         </div>
