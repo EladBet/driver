@@ -1,0 +1,36 @@
+@import '../variables';
+
+.navbar {
+    height: 50px;
+    background-color: #20b8ea;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+
+    .title {
+      padding-left: 30px;
+      color: white;
+      font-size: 16px;      
+    }
+
+    .search {
+      padding-right: 10px;     
+
+      input {
+        width: 300px;
+        border-radius:2em;
+        outline:0;                 
+        padding:0 9px;
+        color:#888888;
+      } 
+    }
+
+    @media (max-width: $mobile-max-size) {  
+        justify-content: center !important;
+
+        .title {      
+          display: none;
+        }
+    }
+  }
