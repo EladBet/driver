@@ -1,25 +1,31 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import {Provider} from 'mobx-react';
+import { Provider } from 'mobx-react';
 import './style.scss';
-
-import {MobxRouter, RouterStore, startRouter} from 'mobx-router';
+import { MobxRouter, startRouter } from 'mobx-router';
+import { getDrivers } from './drivers.service.js';
+import Nav from './navbar/navbar.component';
+//mobx
 import views from './config/views';
-
-//mobx store
-const store = {
-	app: {
-		title: 'MobX Router Example App',
-		user: null
-	},
-	//here's how we can plug the routerStore into our store
-	router: new RouterStore()
-};
+import store from './mobx/store';
 
 startRouter(views, store);
 
+getDrivers()
+    .then(drivers => {
+        store.app.setDrivers(drivers);
+        store.app.setLoaded(true);
+    })
+    .catch(error => {
+        store.app.setError(error);
+        store.app.setLoaded(true);
+    });
+
 ReactDOM.render(
-  <Provider store={store}>
-  	<MobxRouter/>
-  </Provider>, document.getElementById('root')
-)
+    <Provider store={store}>
+        <div>
+            <Nav />
+            <MobxRouter />
+        </div>
+    </Provider>, document.getElementById('root')
+);
