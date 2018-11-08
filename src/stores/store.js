@@ -1,8 +1,8 @@
-import AppStore from './app-store';
 import {RouterStore} from 'mobx-router';
+import DriversStore from './drivers-store';
 
 const store = {
-    app: new AppStore(),
+    app: new DriversStore(),
     router: new RouterStore()
 };
 

@@ -10,7 +10,15 @@ class DriverDetails extends Component {
         const { store } = this.props;
         const { router: { params } } = store;
 
-        const driver = store.app.drivers.filter(driver => driver.id === params.id)[0];
+        const driverArr = store.app.drivers.filter(driver => driver.id === params.id);
+        if (!driverArr.length) {
+            return <div>
+                <Link view={views.home} store={store}> Go to Home Page</Link>
+                <div>Error 404 Not Found</div>
+            </div>;
+        }
+        const driver = driverArr[0];
+
         return (
             <div className="driver-details">
                 {store.app.error && <div className="error">Error: {store.app.error.message}</div>}
@@ -19,7 +27,7 @@ class DriverDetails extends Component {
                         <Link view={views.home} store={store}> Go to Home Page</Link>
                         <Driver {...driver} />
                     </React.Fragment>
-                 )}
+                )}
             </div>
         )
     }

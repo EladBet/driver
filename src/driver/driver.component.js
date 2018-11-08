@@ -20,55 +20,24 @@ function secureUrl(url) {
 }
 
 class Driver extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { active: false, visibility: false };
-
-        this.setActive = this.setActive.bind(this);
-        this.setNotActive = this.setNotActive.bind(this);
-        this.onImageError = this.onImageError.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-        this.handleNavigation = this.handleNavigation.bind(this);
-    }
-
-    setActive() {
-        this.setState({ active: true });
-    }
-
-    setNotActive() {
-        this.setState({ active: false });
-    }
-
     onImageError(e) {
         e.target.onerror = null;
         e.target.src = defaultProfileImage;
     }
 
-    handleChange(event) {
-        if (event.isIntersecting) {
-            this.setState({ visibility: true });
-        }
-    }
-
-    handleNavigation() {
-
-    }
-
     render() {
-        const { store } = this.props;
+        const { store, data = {}, isIntersecting, id } = this.props;
         const { router: { goTo } } = store;
-        const { profile_image, name, company_name, phone, email, id } = this.props;
+        const { profile_image, name, company_name, phone, email } = data;
         const backgroundImage = secureUrl(profile_image);
 
         return (
             <div className="driver">
-                <Observer onChange={this.handleChange} rootMargin="0% 0% 25%">
+                <Observer onChange={(e) => e.isIntersecting && this.props.setIntersecting()} rootMargin="0% 0% 25%">
                     <div
-                        onClick={() => goTo(views.driverDetails, { id: id }, store)}
-                        onMouseOver={this.setActive}
-                        onMouseLeave={this.setNotActive}>
-                        {this.state.visibility && (
-                            <div className={`image ${this.state.active ? 'active' : ''}`}>
+                        onClick={() => goTo(views.driverDetails, { id: id }, store)}>
+                        {isIntersecting && (
+                            <div className="image">
                                 <img src={backgroundImage} onError={this.onImageError} className="img-fluid"
                                      alt="Driver Iamge"></img>
                             </div>
@@ -80,12 +49,10 @@ class Driver extends Component {
                         </div>
                         <div className="name">{name}</div>
                         <div className="rank">{company_name}</div>
-                        {this.state.active && (
-                            <div className="more">
-                                {phone && <div className="phone">Phone Number: {phone}</div>}
-                                {email && <div className="email">Email: {email}</div>}
-                            </div>
-                        )}
+                        <div className="more">
+                            {phone && <div className="phone">Phone Number: {phone}</div>}
+                            {email && <div className="email">Email: {email}</div>}
+                        </div>
                     </div>
                 </Observer>
             </div>
