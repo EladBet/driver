@@ -1,15 +1,15 @@
 {
-  "main.css": "/driver-list/static/css/main.94d9328c.chunk.css",
-  "main.js": "/driver-list/static/js/main.a8297c70.chunk.js",
-  "main.js.map": "/driver-list/static/js/main.a8297c70.chunk.js.map",
-  "static/css/1.f9d3fa1e.chunk.css": "/driver-list/static/css/1.f9d3fa1e.chunk.css",
-  "static/js/1.b422a5c7.chunk.js": "/driver-list/static/js/1.b422a5c7.chunk.js",
-  "static/js/1.b422a5c7.chunk.js.map": "/driver-list/static/js/1.b422a5c7.chunk.js.map",
-  "runtime~main.js": "/driver-list/static/js/runtime~main.8c7226c7.js",
-  "runtime~main.js.map": "/driver-list/static/js/runtime~main.8c7226c7.js.map",
-  "static/css/1.f9d3fa1e.chunk.css.map": "/driver-list/static/css/1.f9d3fa1e.chunk.css.map",
-  "static/css/main.94d9328c.chunk.css.map": "/driver-list/static/css/main.94d9328c.chunk.css.map",
-  "index.html": "/driver-list/index.html",
-  "precache-manifest.898cd1dc7d42aefef1a383fa37c8a2d5.js": "/driver-list/precache-manifest.898cd1dc7d42aefef1a383fa37c8a2d5.js",
-  "service-worker.js": "/driver-list/service-worker.js"
+  "main.css": "/driver/static/css/main.94d9328c.chunk.css",
+  "main.js": "/driver/static/js/main.a8297c70.chunk.js",
+  "main.js.map": "/driver/static/js/main.a8297c70.chunk.js.map",
+  "static/css/1.f9d3fa1e.chunk.css": "/driver/static/css/1.f9d3fa1e.chunk.css",
+  "static/js/1.b422a5c7.chunk.js": "/driver/static/js/1.b422a5c7.chunk.js",
+  "static/js/1.b422a5c7.chunk.js.map": "/driver/static/js/1.b422a5c7.chunk.js.map",
+  "runtime~main.js": "/driver/static/js/runtime~main.26e27f3d.js",
+  "runtime~main.js.map": "/driver/static/js/runtime~main.26e27f3d.js.map",
+  "static/css/1.f9d3fa1e.chunk.css.map": "/driver/static/css/1.f9d3fa1e.chunk.css.map",
+  "static/css/main.94d9328c.chunk.css.map": "/driver/static/css/main.94d9328c.chunk.css.map",
+  "index.html": "/driver/index.html",
+  "precache-manifest.239ba9747fcf92a97c95326eb7d6fb29.js": "/driver/precache-manifest.239ba9747fcf92a97c95326eb7d6fb29.js",
+  "service-worker.js": "/driver/service-worker.js"
 }
