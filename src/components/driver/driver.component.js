@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import 'intersection-observer'; // optional polyfill
 import Observer from '@researchgate/react-intersection-observer';
 import { inject, observer } from 'mobx-react';
-import views from '../config/views';
+import views from '../../config/views';
 
 import './driver.style.scss';
 

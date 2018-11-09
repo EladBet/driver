@@ -2,8 +2,8 @@ import React from 'react';
 //models
 import { Route } from 'mobx-router';
 //components
-import DriverDetails from '../driver-details/driver-details.component';
-import Drivers from '../drivers/drivers.component.js'
+import DriverDetails from '../components/driver-details/driver-details.component';
+import Drivers from '../components/drivers/drivers.component.js'
 
 const views = {
     home: new Route({

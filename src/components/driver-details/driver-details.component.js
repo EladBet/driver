@@ -3,7 +3,7 @@ import { inject, observer } from 'mobx-react';
 import PropTypes from 'prop-types';
 import { Link } from 'mobx-router';
 import Driver from '../driver/driver.component';
-import views from '../config/views';
+import views from '../../config/views';
 import './driver-details.style.scss';
 
 class DriverDetails extends Component {
