@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
+import PropTypes from 'prop-types';
 import Driver from '../driver/driver.component';
 
 import './drivers.style.scss';
@@ -25,5 +26,9 @@ class Drivers extends Component {
         );
     }
 }
+
+Drivers.propTypes = {
+    store: PropTypes.object.isRequired
+};
 
 export default inject('store')(observer(Drivers));

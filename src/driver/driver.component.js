@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import 'intersection-observer'; // optional polyfill
 import Observer from '@researchgate/react-intersection-observer';
 import { inject, observer } from 'mobx-react';
@@ -26,14 +27,14 @@ class Driver extends Component {
     }
 
     render() {
-        const { store, data = {}, isIntersecting, id } = this.props;
+        const { store, data = {}, isIntersecting, id, setIntersecting } = this.props;
         const { router: { goTo } } = store;
         const { profile_image, name, company_name, phone, email } = data;
         const backgroundImage = secureUrl(profile_image);
 
         return (
             <div className="driver">
-                <Observer onChange={(e) => e.isIntersecting && this.props.setIntersecting()} rootMargin="0% 0% 25%">
+                <Observer onChange={(e) => e.isIntersecting && setIntersecting()} rootMargin="0% 0% 25%">
                     <div
                         onClick={() => goTo(views.driverDetails, { id: id }, store)}>
                         {isIntersecting && (
@@ -59,5 +60,13 @@ class Driver extends Component {
         );
     }
 }
+
+Driver.propTypes = {
+    store: PropTypes.object.isRequired,
+    data: PropTypes.object,
+    isIntersecting: PropTypes.bool.isRequired,
+    id: PropTypes.string.isRequired,
+    setIntersecting: PropTypes.func.isRequired,
+};
 
 export default inject('store')(observer(Driver));
