@@ -18,5 +18,3 @@ open http://localhost:3000
 npm run test
 ```
 
-demo: http://eladbet.github.io/driver
-
