@@ -8,7 +8,6 @@ import views from '../../config/views';
 import store from '../../stores/store';
 
 startRouter(views, store);
-console.log('PUBLIC_URL: ', process.env.PUBLIC_URL);
 
 export default class App extends Component {
     render() {

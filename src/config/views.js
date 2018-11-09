@@ -6,6 +6,7 @@ import DriverDetails from '../components/driver-details/driver-details.component
 import Drivers from '../components/drivers/drivers.component.js'
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
+console.log('PUBLIC_URL: ', PUBLIC_URL);
 
 const views = {
     home: new Route({
