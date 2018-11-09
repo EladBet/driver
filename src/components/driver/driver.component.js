@@ -4,26 +4,15 @@ import 'intersection-observer'; // optional polyfill
 import Observer from '@researchgate/react-intersection-observer';
 import { inject, observer } from 'mobx-react';
 import views from '../../config/views';
+import {secureUrl, getDefaultImg} from './url.service';
 
 import './driver.style.scss';
 
 
-const defaultProfileImage = 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png';
-
-function secureUrl(url) {
-    if (!url) {
-        return defaultProfileImage;
-    }
-    if (url.indexOf('https') < 0) {
-        url = url.replace('http', 'https');
-    }
-    return url;
-}
-
 class Driver extends Component {
     onImageError(e) {
         e.target.onerror = null;
-        e.target.src = defaultProfileImage;
+        e.target.src = getDefaultImg();
     }
 
     render() {
