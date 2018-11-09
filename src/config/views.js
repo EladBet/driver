@@ -5,16 +5,15 @@ import { Route } from 'mobx-router';
 import DriverDetails from '../components/driver-details/driver-details.component';
 import Drivers from '../components/drivers/drivers.component.js'
 
-const PUBLIC_URL = process.env.PUBLIC_URL;
 console.log('PUBLIC_URL: ', PUBLIC_URL);
 
 const views = {
     home: new Route({
-        path: `${process.env.PUBLIC_URL}/`,
+        path: `${PUBLIC_URL}/`,
         component: <Drivers />
     }),
     driverDetails: new Route({
-        path: `${process.env.PUBLIC_URL}/driver/:id`,
+        path: `${PUBLIC_URL}/driver/:id`,
         component: <DriverDetails />
     })
 };
