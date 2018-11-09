@@ -1,7 +1,8 @@
 {
-  "name": "react-8vuexv",
+  "name": "react-mobx-driver",
   "version": "0.0.0",
   "private": true,
+  "homepage": "http://eladbet.github.io/driver",
   "dependencies": {
     "@researchgate/react-intersection-observer": "^0.7.4",
     "bootstrap": "^4.1.3",
@@ -19,9 +20,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
+    "gh-pages": "^2.0.1",
     "react-scripts": "latest"
   },
   "browserslist": [
