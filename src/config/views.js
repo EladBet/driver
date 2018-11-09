@@ -13,7 +13,7 @@ const views = {
         component: <Drivers />
     }),
     driverDetails: new Route({
-        path: '/driver/:id',
+        path: PUBLIC_URL + '/driver/:id',
         component: <DriverDetails />
     })
 };
