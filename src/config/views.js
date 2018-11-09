@@ -10,11 +10,11 @@ console.log('PUBLIC_URL: ', PUBLIC_URL);
 
 const views = {
     home: new Route({
-        path: PUBLIC_URL + '/',
+        path: `${process.env.PUBLIC_URL}/`,
         component: <Drivers />
     }),
     driverDetails: new Route({
-        path: PUBLIC_URL + '/driver/:id',
+        path: `${process.env.PUBLIC_URL}/driver/:id`,
         component: <DriverDetails />
     })
 };
