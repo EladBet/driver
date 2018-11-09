@@ -1,8 +1,8 @@
 {
-  "name": "react-mobx-driver",
+  "name": "react-mobx-driver-8vuexz",
   "version": "0.0.0",
   "private": true,
-  "homepage": "http://eladbet.github.io/driver",
+  "homepage": "http://eladBet.github.io/driver",
   "dependencies": {
     "@researchgate/react-intersection-observer": "^0.7.4",
     "bootstrap": "^4.1.3",
